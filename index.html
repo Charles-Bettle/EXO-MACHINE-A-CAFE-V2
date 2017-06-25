@@ -3,19 +3,19 @@
 <head>
 	<title>Machine à café en JS</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body>
 
 
-
 	<div class="machine-totale container">
 		<div class="machine-a-cafe">
-			<img src="../img/machine-a-cafe-back.png" alt="">
-			<img src="../img/machine a café v2.png" alt="">
-			<img class="displayedImg" src="../img/tasse-a-cafe.png" alt="">
-			<button class="btn-confirmation">CONFIRMER</button>
+			<img src="img/machine-a-cafe-back.png" alt="">
+			<img src="img/machine a café v2.png" alt="">
+			<img class="displayedImg" id="recupTasse" src="img/tasse-a-cafe.png" alt="">
+			<img class="displayedImg2" id="recupTasse2" src="img/tasse-a-cafe-rempli.png" alt="">
+			<button class="btn-confirmation" onclick="delayedAlertSucre();">CONFIRMER</button>
 			<button class="btn-annuler">ANNULER</button>
 		</div>
 		<div class="panel-center-control">
@@ -27,33 +27,33 @@
 					<h1 id="selectionCafe_0" onclick="delayedAlert();">CAFE LONG</h1>
 				</button>
 				<button id="selectionCafeButton_2" class="btn-top-right-cafe" onclick="cafeChoix(2)">
-					<h1 id="selectionCafe_2">CAPPUCCINO</h1>
+					<h1 id="selectionCafe_2" onclick="delayedAlert();">CAPPUCCINO</h1>
 				</button>
 			</div>
 				<div class="panel-top-bottom">
 					<button  id="selectionCafeButton_1" class="btn-bottom-left-cafe" onclick="cafeChoix(1)">
-						<h1 id="selectionCafe_1">ESPRESSO</h1>
+						<h1 id="selectionCafe_1" onclick="delayedAlert();">ESPRESSO</h1>
 					</button>
 					<button id="selectionCafeButton_3" class="btn-bottom-right-cafe" onclick="cafeChoix(3)">
-						<h1 id="selectionCafe_3">NOISETTE</h1>
+						<h1 id="selectionCafe_3" onclick="delayedAlert();">NOISETTE</h1>
 					</button>
 				<div class="panel-sucre">
 					<div class="btn-bottom-sucre">
 						<h2>SUCRE</h2>
 						<button class="btn-sucre-choix-neg"  onclick="diminuerSucre()">-</button>
-						<button class="btn-sucre-choix-sup" onclick="sucreChoix(1)" onclick="augmenterSucre()">+</button>
-						<button id="niveauSucre_0" class="btn-sucre"></button>
+						<button class="btn-sucre-choix-sup"  onclick="augmenterSucre()">+</button>
 						<button id="niveauSucre_1" class="btn-sucre"></button>
 						<button id="niveauSucre_2" class="btn-sucre"></button>
 						<button id="niveauSucre_3" class="btn-sucre"></button>
 						<button id="niveauSucre_4" class="btn-sucre"></button>
+						<button id="niveauSucre_5" class="btn-sucre"></button>
 					</div>	
 				</div>		
 			</div>
 		</div>				
 	</div>
 		
-	<script src="main.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
 
 
 </body>

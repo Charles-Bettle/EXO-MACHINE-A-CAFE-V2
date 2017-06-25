@@ -107,6 +107,13 @@
     margin-left:125px;
 }
 
+.machine-a-cafe img:nth-child(4){
+    width: 80px;
+    position: absolute;
+    top:429px;
+    margin-left:125px;
+}
+
 .panel-center-control{
     text-align: center;
     position: absolute;
@@ -332,7 +339,9 @@
     display: none;
 }
 
-
+.displayedImg2{
+    display: none;
+}
 
 
 /*====================== RESPONSIV ======================*/

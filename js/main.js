@@ -1,8 +1,9 @@
-// selection du cafe
+// initialisation variables
+
 var niveauSucre=0;
-var timeoutID="BLABLA";
 let compteur=0;
 
+// selection du café
 
 var choixCafe=new Array(
         'CAFE LONG',
@@ -20,47 +21,56 @@ reset();
 
 // selection du sucre
 
-
 var choixSucre=new Array(
-        'SUCRE 1',
-        'SUCRE 2',
-        'SUCRE 3',
-        'SUCRE 4',
-        'SUCRE 5',
+        'NIVEAU SUCRE 0',
+        'NIVEAU SUCRE 1',
+        'NIVEAU SUCRE 2',
+        'NIVEAU SUCRE 3',
+        'NIVEAU SUCRE 4',
+        'NIVEAU MAX',
 );
 
 
-function sucreChoix( test) {
-    if (niveauSucre=niveauSucre++){
-        document.getElementById('choixBoisson').innerHTML=choixSucre[test];
-    }
-}
-
 function augmenterSucre(){
-    document.getElementById('niveauSucre_'+niveauSucre).style.background='red';
-    niveauSucre=niveauSucre+1;
-    if (niveauSucre > 4){
-        niveauSucre=4
+       if (niveauSucre <= 4){
+        niveauSucre++;
+        document.getElementById('niveauSucre_'+niveauSucre).style.background='red';
+        document.getElementById('choixBoisson').innerHTML=choixSucre[niveauSucre];
     } 
 };
 
 function diminuerSucre(){
-    document.getElementById('niveauSucre_'+niveauSucre).style.background='#a7a7a7';
-    niveauSucre=niveauSucre-1;
-    if (niveauSucre < 0){
-    niveauSucre=0
+    if (niveauSucre >0){
+        niveauSucre--;
+        document.getElementById('niveauSucre_'+(niveauSucre+1)).style.background='#a7a7a7';
+        document.getElementById('choixBoisson').innerHTML=choixSucre[niveauSucre];
     } 
-};
+};  
 
-// selection du café
+// les alertes en delai
 
-// function delayedAlert() {
-//     timeoutID = window.setTimeout(slowAlert, 1000);
-// }
+function delayedAlert() {
+     window.setTimeout(displaySelectNiveauSucre, 1000);
+ 
+ }
 
-// function slowAlert() {
-//     alert("That was really slow!");
-// }
+ function displaySelectNiveauSucre() {
+     document.getElementById('choixBoisson').innerHTML="NIVEAU DE SUCRE :"
+ }
+
+
+function delayedAlertSucre() {
+     document.getElementById('choixBoisson').innerHTML="EN PRÉPARATION"
+     document.getElementById('recupTasse').style.display='block';
+     var audio = new Audio('sons/cafe3.mp3');audio.play();
+     window.setTimeout(displayConfirmation, 3500);   
+ }
+
+ function displayConfirmation() {
+     document.getElementById('choixBoisson').innerHTML="BOISSON PRÊTE"
+     document.getElementById('recupTasse').style.display='none';
+     document.getElementById('recupTasse2').style.display='block';
+ }
 
 // les resets
     
@@ -75,17 +85,10 @@ function reset(){
     document.getElementById('selectionCafeButton_3').style.background='#a7a7a7';
 }
 
-// confirmation de la selection
-
-
-
-
-
-
 
 // DIVERS A CHECK
 
-    // window.setTimeout(nomDeFunction,3000);
+
 
 
 
